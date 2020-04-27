@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId"
+                access="global" >
+    <aura:attribute name="field" type="String[]" default="['Name','Type', 'Phone']" />
+    <lightning:card title="Display, create and Edit record">
+    	<lightning:recordForm recordId="{!v.recordId}"
+							objectApiName="Account"
+                              fields="{!v.field}"/>
+    </lightning:card>
+    
+    <lightning:card title="Record Edit From">
+        <lightning:recordEditForm recordId="{!v.recordId}"
+                                  objectApiName="Account">
+            <lightning:messages />
+            <lightning:inputField fieldName="Name" />
+            <lightning:button class="slds-m-top_small" type="submit" label="Create New" />
+        </lightning:recordEditForm>
+    </lightning:card>
+	
+    <lightning:card title="Record View From">
+        <lightning:recordViewForm recordId="{!v.recordId}"
+                                  objectApiName="Account">
+            <lightning:messages />
+            <lightning:outputField fieldName="Name" />
+            <lightning:button class="slds-m-top_small" type="submit" label="Create New" />
+        </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>
