@@ -1,4 +1,5 @@
 // This class is used in AccountSearch component.
+// CreatedBy    - Shakti Singh
 public with sharing class AccountSearchController {
     @AuraEnabled
     public static List<Account> searchAccounts( String searchTerm ) {
